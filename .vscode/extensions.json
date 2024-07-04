@@ -9,7 +9,8 @@
     "oven.bun-vscode",
     "biomejs.biome",
     "cweijan.vscode-office",
-    "editorconfig.editorconfig"
+    "editorconfig.editorconfig",
+    "astro-build.houston"
   ],
   "unwantedRecommendations": []
 }
