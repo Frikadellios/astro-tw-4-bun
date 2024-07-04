@@ -1,0 +1,111 @@
+---
+// Import the global.css file here so that it is included on
+// all pages through the use of the <BaseHead /> component.
+import { ViewTransitions } from 'astro:transitions'
+import '@/styles/globals.css'
+import I18NHeader from '@/i18n/I18nHeader.astro'
+import { defaultLang } from '@/i18n/ui'
+import { getLocalizedPathname, pathNameIsInLanguage } from '@/i18n/utils'
+
+interface Props {
+  title: string
+  description: string
+  image?: string
+  lang: string
+}
+
+const canonicalPathname = pathNameIsInLanguage(Astro.url.pathname, defaultLang)
+  ? Astro.url.pathname
+  : getLocalizedPathname(Astro.url.pathname, defaultLang)
+const canonicalURL = new URL(canonicalPathname, Astro.site)
+const { title, description, image = '/og.png' } = Astro.props
+---
+
+<!-- Global Metadata -->
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+<meta name="generator" content={Astro.generator} />
+
+
+<!-- Font preloads -->
+<link rel="preload" href="/fonts/inter.woff2" as="font" type="font/woff2" crossorigin />
+
+<!-- Canonical URL -->
+<link rel="canonical" href={canonicalURL} />
+
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<link rel="icon" type="image/svg+xml" href="/favicon.ico" />
+<meta name="generator" content={Astro.generator} />
+
+<link rel="sitemap" href="/sitemap-index.xml" />
+
+<!-- Font preloads -->
+<link
+	rel="preload"
+	href="./src/assets/fonts/inter.woff2"
+	as="font"
+	type="font/woff2"
+	crossorigin
+/>
+
+<!-- Canonical URL -->
+<link rel="canonical" href={canonicalURL} />
+
+<!-- Alternate URLs -->
+<I18NHeader>
+
+<!-- Primary Meta Tags -->
+<title>{title}</title>
+<meta name="title" content={title} />
+<meta name="description" content={description} />
+
+<!-- Open Graph / Facebook -->
+<meta property="og:type" content="website" />
+<meta property="og:url" content={Astro.url} />
+<meta property="og:title" content={title} />
+<meta property="og:description" content={description} />
+<meta property="og:image" content={new URL(image, Astro.url)} />
+
+<!-- Twitter -->
+<meta property="twitter:card" content="summary_large_image" />
+<meta property="twitter:url" content={Astro.url} />
+<meta property="twitter:title" content={title} />
+<meta property="twitter:description" content={description} />
+<meta property="twitter:image" content={new URL(image, Astro.url)} />
+
+<!-- Sitemap -->
+<link rel="sitemap" href="/sitemap-index.xml" />
+<meta name="robots" content="index, follow" />
+<meta name="googlebot" content="index, follow" />
+
+
+
+<!-- Sitemap -->
+<link rel="sitemap" href="/sitemap-index.xml" />
+
+<!-- RSS Feed -->
+<link rel="alternate" type="application/rss+xml" title={title} href={`${Astro.site}rss.xml`}/>
+
+<!-- Global Scripts -->
+<script is:inline src="/js/theme.js"></script>
+<script is:inline src="/js/scroll.js"></script>
+<script is:inline src="/js/animate.js"></script>
+
+<!-- <ViewTransitions  /> -->
+
+<script>
+  import type { TransitionBeforeSwapEvent } from "astro:transitions/client"
+  document.addEventListener("astro:before-swap", (e) =>
+    [
+      ...(e as TransitionBeforeSwapEvent).newDocument.head.querySelectorAll(
+        "link[as=\"font\"]"
+      ),
+    ].forEach((link) => link.remove())
+  )
+</script>
+
+<ViewTransitions />

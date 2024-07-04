@@ -1,0 +1,131 @@
+@import "tailwindcss";
+
+
+@theme {
+    --foreground-rgb: oklch(98.3% 0.004 316.6);
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+    --color-primary-my: oklch(89.33% 0.17190800551761173 165.35314232524098);
+    --color-background-my: oklch(18.67% 0 0);
+    --color-secondary-my: oklch(73.46% 0.185 152.73);
+
+    --color-background-card: oklch(14.08% 0.004 285.82);
+    --color-neon-yellow: oklch(94.44% 0.194 106.75);
+    --color-neon-pink: oklch(71.7% 0.25 360);
+    --color-neon-lime: oklch(91.5% 0.258 129);
+    --color-neon-cyan: oklch(91.3% 0.139 195.8);
+    --color-emerald-green: oklch(69.59% 0.149 162.48);
+    --color--overlay-blurple: oklch(91.3% 0.139 195.8);
+    --overlay-plurple: oklch(0.5 0.233 303.9 / 0.33);
+    --overlay-blurple: oklch(71.7% 0.25 360 / 10%);
+    --color-green: oklch(0.5 0.207 156.57);
+    --color-black: oklch(0% 0 0);
+    --color-white: oklch(100% 0 0);
+    --color-chiter: oklch(23.57% 0.008 274.61);
+
+
+    /* Shadcn - purple-black */
+    --color-background: oklch(23.57% 0.008 274.61 / 10%);
+    --color-background-brown: oklch(14.67% 0.004 49.31);
+    --color-foreground: oklch(23.57% 0.008 274.61);
+    --color-muted: oklch(26.97% 0 0);
+    --color-muted-foreground: oklch(71.19% 0.013 286.07);
+
+    --color-popover: oklch(14.67% 0.004 49.31);
+    --color-popover-foreground: oklch(96.19% 0 0);
+    --color-card: oklch(21.61% 0.006 56.04);
+    --color-card-foreground: oklch(96.19% 0 0);
+    --color-primary: oklch(72.29% 0.192 149.58);
+    --color-primary-foreground: oklch(26.64% 0.063 152.95);
+    --color-secondary: oklch(27.41% 0.005 286.03);
+    --color-secondary-foreground: oklch(98.48% 0 0);
+    --color-accent: oklch(26.85% 0.006 34.3);
+    --color-accent-foreground: oklch(98.48% 0 0);
+    --color-destructive: oklch(59.18% 0.227 29.7);
+    --color-destructive-foreground: oklch(100% 0 0);
+    --color-primary-foreground: oklch(26.64% 0.063 152.95);
+    --muted-foreground: oklch(71.19% 0.013 286.07);
+
+    --color-border: oklch(27.41% 0.005 286.03);
+    --color-input: oklch(27.41% 0.005 286.03);
+    --color-ring: oklch(52.71% 0.137 150.05);
+
+    --border-radius-lg: 0.5rem;
+    --border-radius-md: calc(var(--border-radius-lg) - 2px);
+    --border-radius-sm: calc(var(--border-radius-md) - 2px);
+
+
+    --animate-accordion-down: accordion-down 200ms ease-in-out;
+    --animate-accordion-up: accordion-up 200ms ease-in-out;
+
+
+    --color-med-black: oklch(28.93% 0.016 248.39);
+    --color-med-yellow: oklch(84.57% 0.172 88);
+    --color-med-yellow-hover: oklch(84.84% 0.166 87.5);
+    --color-med-white: oklch(98.51% 0 0);
+    --color-med-grey: oklch(76.36% 0 0);
+    --color-med-green: oklch(75.2% 0.098 195.27);
+    --color-med-red: oklch(67.18% 0.206 28.02);
+    --color-med-blue: oklch(60.18% 0.174 262.2);
+    --color-med-background: oklch(12.64% 0.027 271.16);
+
+    @keyframes accordion-down {
+      0% {
+        height: 0;
+      }
+      100% {
+        height: var(--radix-accordion-content-height);
+      }
+    }
+
+    @keyframes accordion-up {
+      0% {
+        height: var(--radix-accordion-content-height);
+      }
+      100% {
+        height: 0;
+      }
+    }
+}
+
+
+
+    body {
+        transition: background-color 0.5s ease;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        font-synthesis-weight: none;
+        text-rendering: optimizeLegibility;
+        font-feature-settings: "rlig" 1, "calt" 1;
+      }
+
+      .border {
+        border-color: oklch(35.6% 0.174 312.18 / 25%);
+      }
+      
+      @font-face {
+          font-family: 'Inter';
+          src: url('../assets/fonts/inter.woff2') format('woff2');
+          font-weight: normal;
+          font-style: normal;
+          font-display: swap;
+        }
+      
+      
+
+      @property --tw-outline-style {
+        syntax: "<custom-ident>";
+        inherits: false;
+        initial-value: solid;
+      }
+
+      @layer utilities {
+        .text-balance {
+          text-wrap: balance;
+        }
+        .outline {
+          outline-style: var(--tw-outline-style);
+          outline-width: 1px;
+        }
+      }

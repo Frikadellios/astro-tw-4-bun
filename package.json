@@ -1,0 +1,71 @@
+{
+  "name": "new-website",
+  "module": "index.ts",
+  "type": "module",
+  "scripts": {
+    "editorconfig": "editorconfig-checker -exclude \"**/node_modules/**\"",
+    "dev": "bunx --bun astro dev --verbose",
+    "start": "bun astro check --verbose && bunx --bun astro dev --verbose",
+    "build": "bun astro check --verbose && bunx --bun astro build --watch",
+    "preview": "bunx --bun astro preview",
+    "astro": "astro",
+    "format:check": "prettier --check .",
+    "format::write": "prettier --write .",
+    "biomes": "bunx @biomejs/biome check --write ."
+  },
+  "engines": {
+    "node": ">=18.19.1 <19 || >=20.14.0 <21 || >=21.1.0"
+  },
+  "browserslist": [
+    "defaults and fully supports es6-module",
+    "maintained node versions"
+  ],
+  "devDependencies": {
+    "@biomejs/biome": "1.8.3",
+    "@react-dev-inspector/vite-plugin": "^2.0.1",
+    "@types/bun": "latest",
+    "@types/node": "^20.14.9",
+    "prettier": "^3.3.2",
+    "prettier-plugin-astro": "^0.14.0",
+    "prettier-plugin-tailwindcss": "^0.6.5",
+    "terser": "^5.31.1",
+    "unplugin-auto-import": "^0.17.6",
+    "vite-plugin-inspect": "^0.8.4",
+    "vite-plugin-lightningcss": "^0.0.5"
+  },
+  "peerDependencies": {
+    "typescript": "^5.5.3"
+  },
+  "dependencies": {
+    "@astrojs/check": "^0.7.0",
+    "@astrojs/mdx": "^3.1.2",
+    "@astrojs/react": "^3.6.0",
+    "@astrojs/sitemap": "^3.1.6",
+    "@astrojs/ts-plugin": "^1.8.0",
+    "@radix-ui/react-accordion": "^1.2.0",
+    "@radix-ui/react-icons": "^1.3.0",
+    "@tailwindcss/postcss": "^4.0.0-alpha.16",
+    "@tailwindcss/vite": "^4.0.0-alpha.16",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "@vite-pwa/astro": "^0.4.0",
+    "@vitejs/plugin-legacy": "^5.4.1",
+    "astro": "^4.11.5",
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.1.1",
+    "detect-browser-es": "^0.1.0",
+    "editorconfig-checker": "^5.1.8",
+    "framer-motion": "^11.2.12",
+    "framer-motion-3d": "^11.2.12",
+    "lucide-react": "^0.400.0",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "reading-time": "^1.5.0",
+    "tailwind-merge": "^2.3.0",
+    "tailwindcss": "^4.0.0-alpha.16",
+    "tailwindcss-animate": "^1.0.7",
+    "tester": "^1.4.5",
+    "undici-types": "^6.19.2"
+  },
+  "trustedDependencies": ["@biomejs/biome", "core-js"]
+}

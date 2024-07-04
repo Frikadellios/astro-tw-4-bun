@@ -1,0 +1,34 @@
+---
+import { fade } from 'astro:transitions'
+import { getLangFromUrl, useTranslations } from '@/i18n/utils'
+import { LANGUAGES_ARRAY } from '@/i18n/utils'
+import Layout from '@/layouts/Layout.astro'
+
+
+import Hero from '@/components/tailwind-sections/Hero.astro'
+import Content from '@/components/tailwind-sections/Content.astro'
+import Logos from '@/components/tailwind-sections/Logos.astro'
+import Cta from '@/components/tailwind-sections/Cta.astro'
+import Footer from '@/components/Footer.astro'
+import { AccordionDemo } from '@/components/react/accordion-section'
+
+export const getStaticPaths = () => {
+  return LANGUAGES_ARRAY.map((lang) => ({
+    params: { lang }
+  }))
+}
+
+export const prerender = true
+const lang = getLangFromUrl(Astro.url)
+const t = useTranslations(lang)
+---
+
+
+<Layout title={t('homepage-title')} description={t('homepage-description')} lang={lang} transition:animate={fade({ duration: "0.4s" })}>
+  <Hero />
+  <Content />
+  <Logos />
+  <Cta />
+  <AccordionDemo client:visible />
+  <Footer />
+</Layout>

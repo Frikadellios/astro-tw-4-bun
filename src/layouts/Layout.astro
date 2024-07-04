@@ -1,0 +1,49 @@
+---
+import '@/styles/globals.css'
+import BaseHead from '@/components/BaseHead.astro'
+import CardMouseMoveScript from '@/components/motion/CardMouseMoveScript'
+import TailwindIndicator from '@/components/tailwind-indicator.astro'
+import { cn } from '@/lib/utils'
+
+type Props = {
+  title: string
+  description?: string
+  lang: string
+  mainClass?: string
+  bodyClass?: string
+}
+
+import Container from '@/components/layouts/Container.astro'
+import { SITE } from '@/const'
+import I18NHeader from '@/i18n/I18nHeader.astro'
+import { getLangFromUrl } from '@/i18n/utils'
+
+const lang = getLangFromUrl(Astro.url)
+const { title, description, mainClass, bodyClass } = Astro.props as Props
+---
+
+<!doctype html>
+<html lang={lang} class="bg-background text-foreground scroll-smooth">
+    <head>
+        <BaseHead
+            title={`${title} | ${SITE.TITLE[lang]}`}
+            description={`${description} | ${SITE.DESCRIPTION[lang]}`}
+            lang={lang}
+        />
+        <I18NHeader />
+    </head>
+    <body class={cn("flex flex-col min-h-screen", bodyClass)}>
+    <Container>
+        <main class={cn(mainClass)}>
+            <slot />
+            <TailwindIndicator />
+        </main>
+        <CardMouseMoveScript client:load />
+    </Container>
+        <style is:global>
+            img {
+              content-visibility: auto;
+            }
+          </style>
+    </body>
+</html>
