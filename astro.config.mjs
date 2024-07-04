@@ -49,7 +49,7 @@ export default defineConfig({
       wrap: true
     }
   },
-  site: 'http://localhost:4321',
+  site: 'https://astro-tw-4-bun.pages.dev',
   integrations: [
     AstroPWA({
       registerType: 'autoUpdate'
