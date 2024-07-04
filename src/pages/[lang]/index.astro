@@ -3,7 +3,12 @@ import { fade } from 'astro:transitions'
 import { getLangFromUrl, useTranslations } from '@/i18n/utils'
 import { LANGUAGES_ARRAY } from '@/i18n/utils'
 import Layout from '@/layouts/Layout.astro'
-import GradientBackground from '@/components/gradient-background.astro'
+import HeroSectionGradientBackground from '@/components/react/hero-starter'
+import FeaturesWithHeading from '@/components/react/features-with-icons'
+import Pricing from '@/components/react/pricing'
+import { BentoGrid } from '@/components/react/services-bento-greed'
+import CentralAboutMe from '@/components/react/central-about-me'
+
 
 export const getStaticPaths = () => {
   return LANGUAGES_ARRAY.map((lang) => ({
@@ -18,5 +23,9 @@ const t = useTranslations(lang)
 
 
 <Layout title={t('homepage-title')} description={t('homepage-description')} lang={lang} transition:animate={fade({ duration: "0.4s" })}>
-  <GradientBackground title={t('about-title')} description={t('services-title')} content={t('about-info')} />
+    <HeroSectionGradientBackground />
+    <CentralAboutMe />
+    <FeaturesWithHeading />
+    <Pricing />
+    <BentoGrid client:load />
 </Layout>

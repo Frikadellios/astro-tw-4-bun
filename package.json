@@ -42,10 +42,16 @@
     "@astrojs/react": "^3.6.0",
     "@astrojs/sitemap": "^3.1.6",
     "@astrojs/ts-plugin": "^1.8.0",
+    "@headlessui/react": "^2.1.1",
+    "@heroicons/react": "^2.1.4",
     "@radix-ui/react-accordion": "^1.2.0",
     "@radix-ui/react-avatar": "^1.1.0",
+    "@radix-ui/react-dropdown-menu": "^2.1.1",
     "@radix-ui/react-icons": "^1.3.0",
+    "@radix-ui/react-navigation-menu": "^1.2.0",
+    "@radix-ui/react-select": "^2.1.1",
     "@radix-ui/react-slot": "^1.1.0",
+    "@radix-ui/react-toast": "^1.2.1",
     "@tailwindcss/postcss": "^4.0.0-alpha.16",
     "@tailwindcss/vite": "^4.0.0-alpha.16",
     "@types/react": "^18.3.3",
@@ -57,6 +63,7 @@
     "clsx": "^2.1.1",
     "detect-browser-es": "^0.1.0",
     "editorconfig-checker": "^5.1.8",
+    "embla-carousel-react": "^8.1.6",
     "framer-motion": "^11.2.12",
     "framer-motion-3d": "^11.2.12",
     "lucide-react": "^0.400.0",
@@ -69,5 +76,5 @@
     "tester": "^1.4.5",
     "undici-types": "^6.19.2"
   },
-  "trustedDependencies": ["@biomejs/biome", "core-js"]
+  "trustedDependencies": ["@biomejs/biome", "core-js", "esbuild", "sharp"]
 }
