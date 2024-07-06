@@ -23,7 +23,7 @@ export default function CentralAboutMe() {
                 <svg viewBox="0 0 2 2" width={3} height={3} aria-hidden="true" className="fill-primary">
                   <circle cx={1} cy={1} r={1} />
                 </svg>
-                <div className="text-foreground">CEO of Workcation</div>
+                <div className="text-foreground">Freelancer</div>
               </div>
             </figcaption>
           </figure>
