@@ -29,7 +29,7 @@ const navigation = [
   ]
 
   const actions = [
-    { name: 'Login', href: '/login', icon: ArrowRightIcon },
+    { name: 'Login', href: '/login' },
   ]
 
 const products = [
@@ -52,8 +52,8 @@ export default function NavigationSection() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className="sticky inset-x-1 top-0 z-50 ">
-      <nav aria-label="Global" className="mx-5 flex max-w-3xl items-center justify-between p-6 lg:px-8">
+    <header className="sticky top-0 z-50 w-auto px-2">
+      <nav className="mx-2 sticky flex w-auto items-center justify-between p-6 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
           <a href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
@@ -63,18 +63,18 @@ export default function NavigationSection() {
         <div className="flex lg:hidden">
           <button
             type="button"
-            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-foreground hover:text-neon-cyan group-hover:text-neon-cyan "
+            className="-m-2.5 inline-flex items-center justify-center rounded-md p-2.5 text-foreground hover:text-neon-cyan"
             onClick={() => setMobileMenuOpen(true)}
           >
             <span className="sr-only">Open main menu</span>
-            <Bars3Icon className="h-6 w-6 text-foreground hover:text-neon-cyan group-hover:text-neon-cyan" aria-hidden="true" />
+            <Bars3Icon className="h-6 w-6" aria-hidden="true" />
           </button>
         </div>
-        <PopoverGroup className="hidden lg:flex lg:gap-x-12 text-foreground hover:text-neon-cyan group-hover:text-neon-cyan">
+        <PopoverGroup className="hidden lg:flex lg:gap-x-12 text-foreground hover:text-neon-cyan ">
           <Popover className="relative">
-            <PopoverButton className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-foreground hover:text-neon-cyan group-hover:text-neon-cyan">
+            <PopoverButton className="flex items-center gap-x-1 text-sm font-semibold leading-6 text-foreground hover:text-neon-cyan">
               Product
-              <ChevronDownIcon className="h-5 w-5 flex-none text-muted-foreground hover:text-neon-cyan group-hover:text-neon-cyan" aria-hidden="true" />
+              <ChevronDownIcon className="h-5 w-5 flex-none text-muted-foreground hover:text-neon-cyan" aria-hidden="true" />
             </PopoverButton>
 
             <PopoverPanel
@@ -105,9 +105,9 @@ export default function NavigationSection() {
                   <a
                     key={item.name}
                     href={item.href}
-                    className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-foreground hover:bg-muted-foreground/10 hover:text-neon-cyan group-hover:text-neon-cyan"
+                    className="flex items-center justify-center gap-x-2.5 p-3 text-sm font-semibold leading-6 text-foreground hover:bg-muted-foreground/10 hover:text-neon-cyan"
                   >
-                    <item.icon className="h-5 w-5 flex-none text-foreground hover:text-neon-cyan group-hover:text-neon-cyan" aria-hidden="true" />
+                    <item.icon className="h-5 w-5 flex-none text-foreground hover:text-neon-cyan" aria-hidden="true" />
                     {item.name}
                   </a>
                 ))}
@@ -129,8 +129,8 @@ export default function NavigationSection() {
         </div>
       </nav>
       <Dialog className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
-        <div className="fixed inset-0 z-10" />
-        <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto max-w-2xl bg-background sm:ring-neon-cyan/10 text-foreground hover:text-neon-cyan group-hover:text-neon-cyan bg-background px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-neon-cyan/30">
+        <div className="fixed inset-0 z-50" />
+        <DialogPanel className="fixed inset-y-0 right-0 z-50 w-auto mx-2 overflow-y-auto bg-background text-foreground hover:text-neon-cyan bg-background px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-neon-cyan">
           <div className="flex items-center justify-between">
             <a href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">DevOpSick</span>
@@ -155,7 +155,7 @@ export default function NavigationSection() {
                 <Disclosure as="div" className="-mx-3">
                   {({ open }) => (
                     <>
-                      <DisclosureButton className="flex w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-foreground hover:bg-muted-foreground/10 hover:text-neon-cyan group-hover:text-neon-cyan ">
+                      <DisclosureButton className="flex mx-auto w-full items-center justify-between rounded-lg py-2 pl-3 pr-3.5 text-base font-semibold leading-7 text-foreground hover:bg-muted-foreground/10 hover:text-neon-cyan group-hover:text-neon-cyan ">
                         Product
                         <ChevronDownIcon
                           className={classNames(open ? 'rotate-180' : '', 'h-5 w-5 flex-none')}
@@ -197,8 +197,7 @@ export default function NavigationSection() {
                     href={item.href}
                     className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-foreground hover:bg-muted-foreground/10 hover:text-neon-cyan group-hover:text-neon-cyan"
                 >
-
-                <span aria-hidden="true">{item.name} </span><item.icon className="h-5 w-5 flex-none text-foreground hover:text-neon-cyan group-hover:text-neon-cyan" aria-hidden="true" />
+                  {item.name}
                   </a>
                   ))}
               </div>

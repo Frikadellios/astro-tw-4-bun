@@ -327,9 +327,6 @@ header {
   opacity: 1;
   }
 
-  html {
-    scroll-behavior: smooth;
-  }
 
   .shadow {
     position: absolute;
@@ -427,9 +424,6 @@ header {
 
     body {
         transition: background-color 0.5s ease;
-        position: relative;
-        display: flex;
-        flex-direction: column;
         font-synthesis-weight: none;
         text-rendering: optimizeLegibility;
         font-feature-settings: "rlig" 1, "calt" 1;
