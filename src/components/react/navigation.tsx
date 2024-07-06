@@ -130,7 +130,7 @@ export default function NavigationSection() {
       </nav>
       <Dialog className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
         <div className="fixed inset-0 z-50" />
-        <DialogPanel className="fixed inset-y-0  z-50 w-auto mx-2 overflow-y-auto text-foreground hover:text-neon-cyan bg-background px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-neon-cyan">
+        <DialogPanel className="fixed inset-y-0 my-auto mx-auto w-full z-50 overflow-y-auto text-foreground group-hover:text-neon-cyan hover:text-neon-cyan bg-background px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-neon-cyan">
           <div className="flex items-center justify-between">
             <a href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">DevOpSick</span>
