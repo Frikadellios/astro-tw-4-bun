@@ -1,7 +1,6 @@
 @import "tailwindcss";
 
 @theme {
-
   --foreground-rgb: oklch(98.3% 0.004 316.6);
   --background-start-rgb: 0, 0, 0;
   --background-end-rgb: 0, 0, 0;
@@ -52,6 +51,7 @@
   --border-radius-lg: 0.5rem;
   --border-radius-md: calc(var(--border-radius-lg) - 0.5px);
   --border-radius-sm: calc(var(--border-radius-md) - 0.5px);
+  --ds-shadow-border: 0 0 0 1px hsla(0, 0%, 100%, .145);
 
 
   --animate-background-shine: background-shine 2s linear infinite;
@@ -402,33 +402,32 @@ header {
     font-display: swap;
   }
 
-  @property --tw-outline-style {
-    syntax: "<custom-ident>";
-    inherits: false;
-    initial-value: solid;
+  html {
+    scroll-behavior: smooth;
   }
 
-  @layer utilities {
-    .text-balance {
-      text-wrap: balance;
+  body {
+    transition: background-color 0.5s ease;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    font-synthesis-weight: none;
+    text-rendering: optimizeLegibility;
+    font-feature-settings: "rlig" 1, "calt" 1;
+    color: rgb(var(--foreground-rgb));
+    background: linear-gradient(
+        to bottom,
+        transparent,
+        rgb(var(--background-end-rgb))
+        )
+        rgb(var(--background-start-rgb));
     }
-    .outline {
-      outline-style: var(--tw-outline-style);
-      outline-width: 1px;
-    }
-  }
 
-
-
-
-
-    body {
-        transition: background-color 0.5s ease;
-        font-synthesis-weight: none;
-        text-rendering: optimizeLegibility;
-        font-feature-settings: "rlig" 1, "calt" 1;
+    @media screen and (max-width: 768px) {
+        :root {
+          --velocidad-marquee: 5s;
         }
-
+      }
 
     @property --tw-outline-style {
         syntax: "<custom-ident>";

@@ -57,7 +57,7 @@ const Pricing = () => {
 
   const Heading = () => (
     <div className="relative z-10 my-12 flex flex-col items-center justify-center gap-4">
-      <div className="flex w-full flex-col items-start justify-center space-y-4 md:items-center">
+      <div className="flex w-full flex-col  justify-center space-y-4 items-center">
         <div className="mb-2 inline-block rounded-full bg-primary px-2 py-[0.20rem] text-xs font-medium uppercase text-neon-cyan">
           {' '}
           Pricing
@@ -65,7 +65,7 @@ const Pricing = () => {
         <p className="mt-2 text-3xl font-bold tracking-tight text-foreground sm:text-4xl">
           Fair pricing, unfair advantage.
         </p>
-        <p className="text-md max-w-xl text-foreground md:text-center">
+        <p className="text-md max-w-xl text-foreground text-center">
           Get started with Acme today and take your business to the next level.
         </p>
       </div>
@@ -106,9 +106,9 @@ const Pricing = () => {
         <div
           // biome-ignore lint/suspicious/noArrayIndexKey: <explanation>
           key={index}
-          className="w-full rounded-xl border-[1px] border-primary/55 p-6 drop-shadow-xl text-left "
+          className="w-full rounded-xl border-[1px] bg-background/80 border-primary/55 p-6 drop-shadow-3xl text-left "
         >
-          <h1 className="mb-1 mt-0 scroll-m-20 font-extrabold tracking-tight lg:text-5xl hover:text-neon-cyan">
+          <h1 className="scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl">
             {plan.name}
           </h1>
           <p className=" mb-6 text-md leading-6 text-foreground my-3">{plan.description}</p>
@@ -152,7 +152,7 @@ const Pricing = () => {
   )
 
   return (
-    <section className="relative w-full overflow-hidden  py-12 text-foreground lg:px-2 lg:py-12">
+    <section className="relative w-full overflow-hidden py-12 text-foreground lg:px-2 lg:py-12">
       <Heading />
       <PricingCards />
     </section>
