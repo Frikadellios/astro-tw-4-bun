@@ -65,6 +65,8 @@
   --animate-bg-shine: bg-shine 2.1s linear infinite;
   --animate-backgroundPositionSpin: background-position-spin 3000ms infinite alternate;
   --animate-move: move 5s linear infinite;
+  --animation: shadow-slide infinite 4s linear alternate;
+
 
    @keyframes move {
           0% {
@@ -123,6 +125,17 @@
       }
     }
 
+    @keyframes shadow-slide {
+        from {
+          background: hsl(var(--primary) / 20%);
+          right: 460px;
+        }
+        to {
+          background: hsl(var(--primary) / 80%);
+          right: 160px;
+        }
+      }
+      
     @keyframes accordion-up {
       0% {
         height: var(--radix-accordion-content-height);
@@ -293,52 +306,15 @@
 }
 
 header {
-  border-bottom: 1px solid transparent;
   background-color: transparent;
   -webkit-backdrop-filter: blur(16px);
   backdrop-filter: blur(16px);
-    z-index: 2;
   }
 
   .hero > img {
   filter: drop-shadow(0 0 3rem var(--color-primary));
-    z-index: 2;
   }
 
-  .card {
-    border-radius: 12px;
-    position: relative;
-    background: radial-gradient(
-        300px circle at top left,
-        (var(--sl-color-bg-overlay), transparent 20%),
-        transparent 100%
-      ),
-      radial-gradient(
-        300px circle at bottom right,
-        (var(--sl-color-bg-overlay), transparent 65%),
-        transparent 100%
-      );
-  }
-
-  .card::before {
-    content: "";
-    position: absolute;
-    inset: 0px;
-    border-radius: inherit;
-    transition: opacity 400ms ease 0s;
-    will-change: background, opacity;
-    background: radial-gradient(
-      800px circle at var(--mouse-x) var(--mouse-y),
-      oklch(91.3% 0.139 195.8 / 15%),
-      transparent 40%
-    );
-    opacity: 0;
-    pointer-events: none;
-  }
-
-  .card:hover::before {
-    opacity: 1;
-  }
 
   .hero > img {
     filter: drop-shadow(0 0 3rem var(--color-neon-cyan));
@@ -351,7 +327,70 @@ header {
   opacity: 1;
   }
 
+  html {
+    scroll-behavior: smooth;
+  }
 
+  .shadow {
+    position: absolute;
+    background: hsl(var(--primary) / 0%);
+    border-radius: 24px;
+    rotate: 35deg;
+
+    width: 260px;
+    top: 200px;
+    height: 400px;
+    filter: blur(150px);
+    animation: shadow-slide infinite 4s linear alternate;
+  }
+
+  @keyframes shadow-slide {
+    from {
+      background: hsl(var(--primary) / 20%);
+      right: 460px;
+    }
+    to {
+      background: hsl(var(--primary) / 80%);
+      right: 160px;
+    }
+  }
+
+  @media (max-width: 1024px) {
+    .shadow {
+      top: 70px;
+    }
+
+    @keyframes shadow-slide {
+      from {
+        background: hsl(var(--primary) / 20%);
+        right: 460px;
+      }
+      to {
+        background: hsl(var(--primary) / 50%);
+        right: 160px;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    .shadow {
+      top: 70px;
+      width: 100px;
+      height: 350px;
+      filter: blur(60px);
+    }
+
+    @keyframes shadow-slide {
+      from {
+        background: hsl(var(--primary) / 20%);
+        right: 280px;
+      }
+      to {
+        background: hsl(var(--primary) / 30%);
+        right: 100px;
+      }
+    }
+  }
 
 
 .border {

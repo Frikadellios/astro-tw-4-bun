@@ -19,6 +19,7 @@ import { getLangFromUrl } from '@/i18n/utils'
 import BackgroundDots from '@/components/react/background-dots'
 import { ScrollToTop } from '@/components/react/scroll-to-top'
 import Footer from '@/components/react/footer'
+import NavigationSection from '@/components/react/navigation'
 
 const lang = getLangFromUrl(Astro.url)
 const { title, description, mainClass, bodyClass } = Astro.props as Props
@@ -36,6 +37,7 @@ const { title, description, mainClass, bodyClass } = Astro.props as Props
     </head>
     <body class={cn("flex flex-col min-h-screen", bodyClass)}>
     <Container>
+        <NavigationSection client:load />
         <BackgroundDots />
         <ScrollToTop client:load />
         <main class={cn(mainClass)}>

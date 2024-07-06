@@ -9,7 +9,7 @@ import Pricing from '@/components/react/pricing'
 import { BentoGrid } from '@/components/react/services-bento-greed'
 import CentralAboutMe from '@/components/react/central-about-me'
 import Newsletter from '@/components/react/newseller-section'
-import NavigationSection from '@/components/react/navigation'
+
 
 
 export const getStaticPaths = () => {
@@ -25,7 +25,6 @@ const t = useTranslations(lang)
 
 
 <Layout title={t('homepage-title')} description={t('homepage-description')} lang={lang} transition:animate={fade({ duration: "0.4s" })}>
-    <NavigationSection client:load />
     <HeroSectionGradientBackground />
     <CentralAboutMe />
     <FeaturesWithHeading />

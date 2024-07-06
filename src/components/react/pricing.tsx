@@ -108,7 +108,7 @@ const Pricing = () => {
           key={index}
           className="w-full rounded-xl border-[1px] border-primary/55 p-6 drop-shadow-xl text-left "
         >
-          <h1 className="mb-1 mt-0 text-sm scroll-m-20 font-extrabold tracking-tight lg:text-5xl hover:text-neon-cyan">
+          <h1 className="mb-1 mt-0 scroll-m-20 font-extrabold tracking-tight lg:text-5xl hover:text-neon-cyan">
             {plan.name}
           </h1>
           <p className=" mb-6 text-md leading-6 text-foreground my-3">{plan.description}</p>
