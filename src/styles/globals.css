@@ -135,7 +135,7 @@
           right: 160px;
         }
       }
-      
+
     @keyframes accordion-up {
       0% {
         height: var(--radix-accordion-content-height);
@@ -433,21 +433,7 @@ header {
         font-synthesis-weight: none;
         text-rendering: optimizeLegibility;
         font-feature-settings: "rlig" 1, "calt" 1;
-        color: rgb(var(--foreground-rgb));
-        background: linear-gradient(
-            to bottom,
-            transparent,
-            rgb(var(--background-end-rgb))
-            )
-            rgb(var(--background-start-rgb));
         }
-
-    header {
-        border: none;
-        backdrop-filter: blur(24px) saturate(250%);
-        background: trancperent;
-        z-index: 2;
-      }
 
 
     @property --tw-outline-style {

@@ -52,8 +52,8 @@ export default function NavigationSection() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
 
   return (
-    <header className="absolute inset-x-0 top-0 z-50 w-auto">
-      <nav aria-label="Global" className="flex items-center justify-between p-6 lg:px-8">
+    <header className="sticky inset-x-1 top-0 z-50 ">
+      <nav aria-label="Global" className="mx-5 flex max-w-3xl items-center justify-between p-6 lg:px-8">
         <div className="flex lg:flex-1">
           <a href="/" className="-m-1.5 p-1.5">
             <span className="sr-only">Your Company</span>
@@ -67,7 +67,7 @@ export default function NavigationSection() {
             onClick={() => setMobileMenuOpen(true)}
           >
             <span className="sr-only">Open main menu</span>
-            <Bars3Icon className="h-6 w-6" aria-hidden="true" />
+            <Bars3Icon className="h-6 w-6 text-foreground hover:text-neon-cyan group-hover:text-neon-cyan" aria-hidden="true" />
           </button>
         </div>
         <PopoverGroup className="hidden lg:flex lg:gap-x-12 text-foreground hover:text-neon-cyan group-hover:text-neon-cyan">
@@ -130,7 +130,7 @@ export default function NavigationSection() {
       </nav>
       <Dialog className="lg:hidden" open={mobileMenuOpen} onClose={setMobileMenuOpen}>
         <div className="fixed inset-0 z-10" />
-        <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-background sm:ring-gray-900/10text-foreground hover:text-neon-cyan group-hover:text-neon-cyan bg-background px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-neon-cyan/30">
+        <DialogPanel className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto max-w-2xl bg-background sm:ring-neon-cyan/10 text-foreground hover:text-neon-cyan group-hover:text-neon-cyan bg-background px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-neon-cyan/30">
           <div className="flex items-center justify-between">
             <a href="/" className="-m-1.5 p-1.5">
               <span className="sr-only">DevOpSick</span>
